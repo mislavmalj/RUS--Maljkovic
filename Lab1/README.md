@@ -33,8 +33,8 @@ placeholder
 
 | ID           | Opis                                                                   | Prioritet    |
 |--------------|------------------------------------------------------------------------|--------------|
-| ISR_TIME     | Sustav mora detektirati pritisak tipke 1 (prekid na pinu 2).           | Najviši      |
-| ISR-1        | Sustav mora detektirati pritisak tipke 2 (prekid na pinu 3).           | Gumb (Visok) |
-| ISR-2        | Sustav mora reagirati na senzor pokreta spojen na pin 18.              | Gumb (Niski) | 
-| ISR_GAS      | Sustav mora generirati tajmer prekid svake 1 sekunde.                  | Srednji      |
-| ISR_MOTION   | U svakom tajmerskom prekidu, mora se očitati vrijednost potenciometra. | Najniži      |
+| ISR_TIME     | Svaki tajmerski prekid ima najviši prioritet                           | Najviši      |
+| ISR-1        | Sustav detektira pritisak gumba na pinu **25**                         | Gumb (Visok) |
+| ISR-2        | Sustav detektira pritisak gumba na pinu **26**                         | Gumb (Niski) | 
+| ISR_GAS      | Sustav detektira razinu plina iznad 5000ppm                            | Srednji      |
+| ISR_MOTION   | Sustav deetektira kretanje uz pomoć senzora                            | Najniži      |
