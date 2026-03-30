@@ -25,3 +25,16 @@ Senzor kretanja je povezan na GND, 5V napajanje, te digitalni ulaz na pinu **27*
 ovisno o trenutnim prekidima, uračunavajući da je najniži prekid na listi prioriteta.
 
 ### 2.4. Prekid timera
+placeholder
+
+---
+
+## 3, Prekidi i prioriteti
+
+| ID           | Opis                                                                   | Prioritet    |
+|--------------|------------------------------------------------------------------------|--------------|
+| ISR_TIME     | Sustav mora detektirati pritisak tipke 1 (prekid na pinu 2).           | Najviši      |
+| ISR-1        | Sustav mora detektirati pritisak tipke 2 (prekid na pinu 3).           | Gumb (Visok) |
+| ISR-2        | Sustav mora reagirati na senzor pokreta spojen na pin 18.              | Gumb (Niski) | 
+| ISR_GAS      | Sustav mora generirati tajmer prekid svake 1 sekunde.                  | Srednji      |
+| ISR_MOTION   | U svakom tajmerskom prekidu, mora se očitati vrijednost potenciometra. | Najniži      |
