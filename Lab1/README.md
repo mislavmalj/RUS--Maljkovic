@@ -17,7 +17,11 @@ Gumbima je svojstvo "bounce" softverski postavljeno na 0 eleminirajući potrebu 
 te prolaskom kroz glavnu petlju hijerarhijski odlučuje kako se pali LED povezane sa zastavicama.
 
 ### 2.2. Prekid senzora plina
-Senzor plina je povezan na GND, 5V napajanje, te analogni izlaz na pinu **34**. Senzor kontinuirano motri (simuliranu) razinu plina, te dok je ona iznad 5000ppm okreće dodijeljenu zastavicu (`flag_gas`) i pali
+Senzor plina je povezan na GND, 5V napajanje, te analogni ulaz na pinu **34**. Senzor kontinuirano motri (simuliranu) razinu plina, te dok je ona iznad 5000ppm okreće dodijeljenu zastavicu (`flag_gas`) i pali
 LED ovisno o hijerarhiji provedenih prekida.
 
 ### 2.3. Prekid senzora kretanja
+Senzor kretanja je povezan na GND, 5V napajanje, te digitalni ulaz na pinu **27**. Kada senzor osjeti pokret, šalje digitalni signal i prekidom okreće dodijeljenju zastavicu (`flag_motion`). Time pali LED 
+ovisno o trenutnim prekidima, uračunavajući da je najniži prekid na listi prioriteta.
+
+### 2.4. Prekid timera
