@@ -17,7 +17,7 @@ Gumbima je svojstvo "bounce" softverski postavljeno na 0 eleminirajući potrebu 
 te prolaskom kroz glavnu petlju hijerarhijski odlučuje kako se pali LED povezane sa zastavicama.
 
 ### 2.2. Prekid senzora plina
-Senzor plina je povezan na GND, 5V napajanje, te analogni ulaz na pinu **34**. Senzor kontinuirano motri (simuliranu) razinu plina, te dok je ona iznad 5000ppm okreće dodijeljenu zastavicu (`flag_gas`) i pali
+Senzor plina je povezan na GND, 5V napajanje, te analogni ulaz na pinu **34**. Senzor kontinuirano motri (simuliranu) razinu plina, te dok je ona iznad 5000ppm pali
 LED ovisno o hijerarhiji provedenih prekida.
 
 ### 2.3. Prekid senzora kretanja
@@ -25,7 +25,8 @@ Senzor kretanja je povezan na GND, 5V napajanje, te digitalni ulaz na pinu **27*
 ovisno o trenutnim prekidima, uračunavajući da je najniži prekid na listi prioriteta.
 
 ### 2.4. Prekid timera
-placeholder
+Za implementaciju timera se koristi FreeRTOS software timer. Timer je postavljen da generira prekid svakih 2 sekunde, te okreće dodijeljenu zastavicu (`flag_timer`). Time se uvijeek prva pali povezana LED zbog 
+statusa najvišeg prioriteta timerskog prekida.
 
 ---
 
@@ -34,7 +35,7 @@ placeholder
 | ID           | Opis                                                                   | Prioritet    |
 |--------------|------------------------------------------------------------------------|--------------|
 | ISR_TIME     | Svaki tajmerski prekid ima najviši prioritet                           | Najviši      |
-| ISR-1        | Sustav detektira pritisak gumba na pinu **25**                         | Gumb (Visok) |
-| ISR-2        | Sustav detektira pritisak gumba na pinu **26**                         | Gumb (Niski) | 
+| ISR_1        | Sustav detektira pritisak gumba na pinu **25**                         | Gumb (Visok) |
+| ISR_2        | Sustav detektira pritisak gumba na pinu **26**                         | Gumb (Niski) | 
 | ISR_GAS      | Sustav detektira razinu plina iznad 5000ppm                            | Srednji      |
 | ISR_MOTION   | Sustav deetektira kretanje uz pomoć senzora                            | Najniži      |
