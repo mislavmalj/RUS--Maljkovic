@@ -1,11 +1,11 @@
 <map id="setup" name="setup">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,64,105"/>
-<area shape="rect" id="Node000002" href="$da/d98/sketch_8ino.html#acf8f00f880ea48bacf176e486d43e6a2" title=" " alt="" coords="145,5,204,31"/>
+<area shape="rect" id="Node000001" title="Inicijalizacija LED pinova, pinova za gumbe, te kreacija prekida i timera." alt="" coords="5,80,64,105"/>
+<area shape="rect" id="Node000002" href="$da/d98/sketch_8ino.html#acf8f00f880ea48bacf176e486d43e6a2" title="Upravljanje zastavicom prekida gumba 1." alt="" coords="145,5,204,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="51,78,111,40,132,30,134,35,113,44,54,82"/>
-<area shape="rect" id="Node000003" href="$da/d98/sketch_8ino.html#af6240828c959612a2f25fb60b5a8b5be" title=" " alt="" coords="145,55,204,80"/>
+<area shape="rect" id="Node000003" href="$da/d98/sketch_8ino.html#af6240828c959612a2f25fb60b5a8b5be" title="Upravljanje zastavicom prekida gumba 2." alt="" coords="145,55,204,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="64,85,131,72,132,78,65,90"/>
-<area shape="rect" id="Node000004" href="$da/d98/sketch_8ino.html#a9d9f9d1c7d4a1fd9a2a18d4305dab306" title=" " alt="" coords="135,104,215,129"/>
+<area shape="rect" id="Node000004" href="$da/d98/sketch_8ino.html#a9d9f9d1c7d4a1fd9a2a18d4305dab306" title="Upravljanje zastavicom prekida gumba senzora kretanja." alt="" coords="135,104,215,129"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="65,95,121,105,120,110,64,100"/>
-<area shape="rect" id="Node000005" href="$da/d98/sketch_8ino.html#a6ff68800b04b59ec5ecf08789b3023af" title=" " alt="" coords="112,153,237,179"/>
+<area shape="rect" id="Node000005" href="$da/d98/sketch_8ino.html#a6ff68800b04b59ec5ecf08789b3023af" title="Upravljanje zastavicom timera." alt="" coords="112,153,237,179"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="56,103,113,138,128,145,126,150,111,143,53,108"/>
 </map>

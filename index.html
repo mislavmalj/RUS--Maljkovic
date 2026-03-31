@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RUS_Lab1_prekid: Main Page</title>
+<title>RUS_Lab1_prekid: RUS - Rad s Ugradbenim Sustavima</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -89,10 +89,49 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">RUS_Lab1_prekid Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">RUS - Rad s Ugradbenim Sustavima </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p>Program for measuring weight using HX711 and sending data to ESP-01 via SoftwareSerial.</p>
+<h1><a class="anchor" id="overview"></a>
+Opis sustava</h1>
+<p>Ova vježba koristi ESP32 mikrokontroler za upravljanje svim vanjskim uređajima, te FreeRTOS realtime operacijski sustav za stvaranje tajmerskih prekide. Korišteni vanjski uređaji su dva gumba, senzor plina i senzor kretanja. Cilj vježbe je uspješno implmentirati i upravljati višestrukim prekidima različitih prioriteta.</p>
+<p>@seection button_interrupt Prekidi gumba Sustav koristi dva gumba povezana na GND i digitalni ulaz kako bi detektirali pritisak</p><ul>
+<li>Gumb 1 je povezan na pin 25</li>
+<li>Gumb 2 je povezan na pin 26</li>
+</ul>
+<p>Gumbima je svojstvo "bounce" softverski postavljeno na 0 eleminirajući potrebu za debouncing dijelom koda. Gumbi su povezani na prekid koji mijenja dodijeljene zastavice (<code>flag_button1</code>, <code>flag_button2</code>), te prolaskom kroz glavnu petlju hijerarhijski odlučuje kako se pali LED povezane sa zastavicama.</p>
+<h1><a class="anchor" id="gas_interrupt"></a>
+Prekid senzora plina</h1>
+<p>Senzor plina MQ2 je povezan na GND, 5V napajanje, te analogni ulaz na pinu 34. Senzor kontinuirano motri (simuliranu) razinu plina, te dok je ona iznad 5000ppm pali LED ovisno o hijerarhiji provedenih prekida.</p>
+<h1><a class="anchor" id="movement_interrupt"></a>
+Prekid senzora kretanja</h1>
+<p>Senzor kretanja PIR je povezan na GND, 5V napajanje, te digitalni ulaz na pinu 27. Kada senzor osjeti pokret, šalje digitalni signal i prekidom okreće dodijeljenju zastavicu (<code>flag_motion</code>). Time pali LED ovisno o trenutnim prekidima, uračunavajući da je najniži prekid na listi prioriteta.</p>
+<h1><a class="anchor" id="timer_interrupt"></a>
+Prekid timera</h1>
+<p>Za implementaciju timera se koristi FreeRTOS software timer. Timer je postavljen da generira prekid svakih 2 sekunde, te okreće dodijeljenu zastavicu (<code>flag_timer</code>). Time se uvijeek prva pali povezana LED zbog statusa najvišeg prioriteta timerskog prekida.</p>
+<h1><a class="anchor" id="interrupt_priority"></a>
+Prekidi i prioriteti</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">ID   </th><th class="markdownTableHeadNone">Opis   </th><th class="markdownTableHeadNone">Prioritet    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">ISR_TIME   </td><td class="markdownTableBodyNone">Svaki tajmerski prekid ima najviši prioritet   </td><td class="markdownTableBodyNone">Najviši    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">ISR_1   </td><td class="markdownTableBodyNone">Sustav detektira pritisak gumba na pinu 25   </td><td class="markdownTableBodyNone">Gumb (Visok)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">ISR_2   </td><td class="markdownTableBodyNone">Sustav detektira pritisak gumba na pinu 26   </td><td class="markdownTableBodyNone">Gumb (Niski)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">ISR_GAS   </td><td class="markdownTableBodyNone">Sustav detektira razinu plina iznad 5000ppm   </td><td class="markdownTableBodyNone">Srednji    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">ISR_MOTION   </td><td class="markdownTableBodyNone">Sustav deetektira kretanje uz pomoć senzora   </td><td class="markdownTableBodyNone">Najniži   </td></tr>
+</table>
+<dl class="section note"><dt>Note</dt><dd>Iako ESP32 podržava ugnježđene prekide, zbog manjka pokrivenosti tog materijala na internetu i nedovoljnog znanja o tehnologiji, u nemogućnosti sam ih pravilno (na razini sklopovlja) implementirati. Zbog toga će pravilna odrada prekida po prioritetima biti simulirana kao u danome primjeru</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Mislav Maljković </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>25. ožujak 2026. </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
