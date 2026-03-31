@@ -1,0 +1,38 @@
+@startuml
+skinparam defaultTextAlignment center
+
+title Control Flow Graph Lab1 (CFG)
+
+start
+:Inicijalizacija sustava;
+:Konfiguracija ulaza/izlaz i timera;
+:Povezivanje signala i prekida;
+:Pokretanje serijske komunikacije;
+
+
+partition "Glavna petlja (loop())" {
+    repeat
+        :Mjerenje analognih vrijednosti senzora;
+        :Provjera svih zastavica prekida;
+        
+        if (Barem jedan prekid okinut? (Zastavica "true"/analogna vrijednost)) then (Da)
+            :Blink() funckcija na LED prekida najvišeg prioriteta;
+            :Promjeena zastavice obrađenoga prekida;
+        else (Ne)
+            :Prolaz bez aktivnosti;
+        endif
+
+        
+    repeat while (Sustav uključen)
+}
+
+partition ISR #SandyBrown{
+    :Vanjski okidač (preljev timera, pritisak gumba, očitanje senzora);
+    :Postavljanje zastavice koja predstavlja prekid;
+    if (Timer prekid (Visok priority)) then (Da)
+            :Onemogućavanje obrade drugih prekida;
+        endif
+    :Povratak iz prekida;
+    detach
+}
+@enduml
