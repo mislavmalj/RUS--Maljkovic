@@ -1,7 +1,6 @@
 /**
  * @file sketch.ino
  * @mainpage RUS - Rad s Ugradbenim Sustavima
- * @brief Program for measuring weight using HX711 and sending data to ESP-01 via SoftwareSerial.
  * 
  * @section overview Opis sustava
  * Ova vježba koristi ESP32 mikrokontroler za upravljanje svim vanjskim uređajima, te FreeRTOS realtime operacijski sustav za stvaranje tajmerskih prekide.
