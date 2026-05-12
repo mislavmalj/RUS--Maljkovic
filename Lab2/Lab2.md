@@ -6,7 +6,7 @@ Uz pomoć Wokwi simulacijskog okruženja i Arduino mikrokontrolera, simuliramo i
 
 ## 2. Razine režima mirovanja Arduino mikrokontrolera (LowPower.h bibilioteka)
 
-- PowerDown - **LowPower.powerDown()**, Najdublje stanje mirovanja, Većina periferije onesposobljna i najmanja potrošnja energijee
+- PowerDown - **LowPower.powerDown()**, Najdublje stanje mirovanja, Većina periferije onesposobljena i najmanja potrošnja energijee
 - Standby - **LowPower.powerStandby()**, Sličan PowerDown režime uz jednu glavnu razliku, Jedan vanjski oscilator ostaje u funkciji što omogućava brzo buđenje
 - Idle - **LowPower.idle()**, Koristi najviše energije od režima mirovanja, Zaustavlja rad procesora i brzo se budi
 
