@@ -2,7 +2,15 @@
 
 ## Sažetak
 
-
+| Stavka | Odgovor |
+|---|---|
+| Platforma | Arduino |
+| Varijanta | A |
+| Sleep mode | PowerDown/Standby/Idle |
+| Buđenje | Eksterno(tipkalo)/Tajmerski |
+| Čuvanje stanja | - |
+| Debouncing | Softverski debouncing |
+| Wokwi link | https://wokwi.com/projects/463807470787325953 |
 
 ## 1. Opis sustava
 
@@ -41,7 +49,7 @@ Uz pametno korištenje režima mirovanja i njegovu implementaciju u kodu, potro�
 
 #### 7.1. Uzrok problema
 
-**Bounce** je problem kod tipkala gdje se jedan pritisak registrira kao njih više. Do bouncinga dolazi eksluzivno na fizičkom sklopovlju (po potrebi može biti simulirano) kada se zbog mehaničkih problma zbog jednog pritiska više puta ostvari oscilirajući kontakt. Zbog bouncinga dolazi do neželjnih aktivacija prekida i drugih problema, te ga se treba odmah rješiti.
+**Bounce** je problem kod tipkala gdje se jedan pritisak registrira kao njih više. Do bouncinga dolazi eksluzivno na fizičkom sklopovlju (po potrebi može biti simulirano) kada se zbog mehaničkih problema zbog jednog pritiska više puta ostvari oscilirajući kontakt. Zbog bouncinga dolazi do neželjnih aktivacija prekida i drugih problema, te ga se treba odmah rješiti.
 
 #### 7.2. Odabrano rješenje
 
