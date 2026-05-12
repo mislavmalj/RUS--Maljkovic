@@ -14,7 +14,7 @@ Uz pomoć Wokwi simulacijskog okruženja i Arduino mikrokontrolera, simuliramo i
 
 ### 3.1. Prekid tipkalom
 
-Kao eksterni prekid sustav koristi tipkalo povzano na digitalni **pin 2**. Tipkalo koristi **FALLING** brid za aktivaciju prekida. Aktivacijom prekida budi sustav i okreće zastavicu koju sustav koristi za izvedbu glavne funkcije (treptanje led diode).
+Kao eksterni prekid sustav koristi tipkalo povezano na digitalni **pin 2**. Tipkalo koristi **FALLING** brid za aktivaciju prekida. Aktivacijom prekida budi sustav i okreće zastavicu koju sustav koristi za izvedbu glavne funkcije (treptanje led diode).
 
 ### 3.2. Prekid tajmerom
 
