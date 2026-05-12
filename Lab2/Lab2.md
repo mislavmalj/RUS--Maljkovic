@@ -19,3 +19,5 @@ Kao eksterni prekid sustav koristi tipkalo povezano na digitalni **pin 2**. Tipk
 ### 3.2. Prekid tajmerom
 
 Uz bibilioteku **TimerOne**, kreiran je tajmer koji generira novi prekid svaki određeni vremenski period, u ovome slučaju 10 sekundi. Svakim tajmerskim prekidom se zove funkcija koja okreće zastavicu **awakFlag**, te izvršava glavnu funkciju.
+
+- Link na Wokwi projekt: https://wokwi.com/projects/463807470787325953
