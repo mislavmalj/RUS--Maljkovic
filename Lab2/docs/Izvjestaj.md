@@ -19,3 +19,8 @@ Kao eksterni prekid sustav koristi tipkalo povezano na digitalni **pin 2**. Tipk
 ### 3.2. Prekid tajmerom
 
 Uz bibilioteku **TimerOne**, kreiran je tajmer koji generira novi prekid svaki određeni vremenski period, u ovome slučaju 10 sekundi. Svakim tajmerskim prekidom se zove funkcija koja okreće zastavicu **awakFlag**, te izvršava glavnu funkciju.
+
+### 4. Opis implementacije
+
+Ova laboratorijska vježba u svojoj Arduino implementaciji koristi dvije bibilioteke. **LowPower** biblioteka omogućuj jednostavno upravljanje režimima mirovanja, te dodatnu prilagodbu dijlova mikrokontrolera koje imamo želju onesposobiti. Podržava sve tražene režim mirovanja (PowerDown, Standby i Idle). Druga bibilioteka, TimerOne, omogućava jednostavno kreiranj tajmera svih vrsta, što ju ćini idealnom za izradu potrebnog tajmerskog prekida. 
+Od vanjskih elemnata koristimo jednu led diodu spojenu na digitalni pin 12 i tipkalo spojeno na pin 2 koje služi za aktivaciju eksternog prekida.
