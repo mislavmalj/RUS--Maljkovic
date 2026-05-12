@@ -24,3 +24,11 @@ Uz bibilioteku **TimerOne**, kreiran je tajmer koji generira novi prekid svaki o
 
 Ova laboratorijska vježba u svojoj Arduino implementaciji koristi dvije bibilioteke. **LowPower** biblioteka omogućuj jednostavno upravljanje režimima mirovanja, te dodatnu prilagodbu dijlova mikrokontrolera koje imamo želju onesposobiti. Podržava sve tražene režim mirovanja (PowerDown, Standby i Idle). Druga bibilioteka, TimerOne, omogućava jednostavno kreiranj tajmera svih vrsta, što ju ćini idealnom za izradu potrebnog tajmerskog prekida. 
 Od vanjskih elemnata koristimo jednu led diodu spojenu na digitalni pin 12 i tipkalo spojeno na pin 2 koje služi za aktivaciju eksternog prekida.
+
+### 5. Ograničenja simulacije
+
+Makar je iznimno snažno, Wokwi simulacijsko okruženje sadrži neka kritična ograničenja koja onemogućavaju izvršnenje svih zadataka ove laboratorijsk vježbe. Zbog nedostatka fizičke opreme, mjerenje potrošnje energije postaje ekstremno teško, ako ne i nemoguće, što nas navodi da temu ove vježbe sagledamo više iz logičke i teorijske perspektive. Drugi veliki nedostatak simuiliranog okruženja je minimalna razlika između režima mirovanja, koja je puno izraženija na pravome sklopovlju. Zbog tih faktora ovaj izvještaj se svodi više na teorijska znanja, koristeći vlastitu implementaciju kao priliku prolaska kroz sve glavne dijelove ciklusa režima mirovanja.
+
+### 6. Zaključak
+
+
