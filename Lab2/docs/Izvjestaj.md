@@ -39,14 +39,14 @@ Uz pametno korištenje režima mirovanja i njegovu implementaciju u kodu, potro�
 
 ### 7. Podzadatak: Pametni poštanski sandučić - Debouncing
 
-## 7.1. Uzrok problema
+#### 7.1. Uzrok problema
 
 **Bounce** je problem kod tipkala gdje se jedan pritisak registrira kao njih više. Do bouncinga dolazi eksluzivno na fizičkom sklopovlju (po potrebi može biti simulirano) kada se zbog mehaničkih problma zbog jednog pritiska više puta ostvari oscilirajući kontakt. Zbog bouncinga dolazi do neželjnih aktivacija prekida i drugih problema, te ga se treba odmah rješiti.
 
-## 7.2. Odabrano rješenje
+#### 7.2. Odabrano rješenje
 
 Za rješenj je odabrano softversko debouncanje. Koristimo novu funkciju **debounce()**, te varijable **lastDebounceTime** i **debounceDelay**. Cilj funkcije je računati koliko se često poziva ISR na tipkalu, te ako je vrijeme aktivacije manje od vrijdnosti **debounceDelay**, ne proslijediti na daljnu funkciju i buđenjee sustava. U **lastDebounceTim** spremamo vrijednost zadnjeg zvanja prekida tipkala kako bi ga mogli usporediti sa sljedećim zvanjem.
 
-## 7.3. Utjecaj debouncinga na vremensku učinkovitost
+#### 7.3. Utjecaj debouncinga na vremensku učinkovitost
 
 Eliminiranjem bouncanja kontakta tipkala oslobađamo sustav od bespotrebnih prolaza i izvršavanja koda. Time koristimo manje energije, ranije završavamo kod, te prije ulazimo natrag u stanje mirovanja za daljnju eenergetski učinkovitu izvedbu koda.
