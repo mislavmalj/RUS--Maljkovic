@@ -1,5 +1,9 @@
 # Lab2: Upravljanje potrošnjom energije mikrokontrolera
 
+## Sažetak
+
+
+
 ## 1. Opis sustava
 
 Uz pomoć Wokwi simulacijskog okruženja i Arduino mikrokontrolera, simuliramo i uspoređujemo režime mirovanja mikrokontrolera, te njihov utjecaj na potrošnju energije. Sustav nakon definiranog zadatka ulazi u zadani režim mirovanja, te je konfiguriran vratite se natrag u aktivno stanje nakon vanjskog ili tajmerskog mehanizma buđenja. Definirani zadatak u ovoj implementaciji su dva bljeska led diode, nakon kojih mikrokontroler započne mirovati.
@@ -33,3 +37,16 @@ Makar je iznimno snažno, Wokwi simulacijsko okruženje sadrži neka kritična o
 
 Uz pametno korištenje režima mirovanja i njegovu implementaciju u kodu, potrošnja energije se efikasno optimizira. Iako simulacijski nije moguće u potpunosti procjeniti stvarnu potrošnju energije, naša implementacija prikazuje logiku kojom bi se došlo do smanjenja gubitka energije, te postavlja temelje za pravilnu implementaciju na fizičkom sklopovlju.
 
+### 7. Podzadatak: Pametni poštanski sandučić - Debouncing
+
+## 7.1. Uzrok problema
+
+**Bounce** je problem kod tipkala gdje se jedan pritisak registrira kao njih više. Do bouncinga dolazi eksluzivno na fizičkom sklopovlju (po potrebi može biti simulirano) kada se zbog mehaničkih problma zbog jednog pritiska više puta ostvari oscilirajući kontakt. Zbog bouncinga dolazi do neželjnih aktivacija prekida i drugih problema, te ga se treba odmah rješiti.
+
+## 7.2. Odabrano rješenje
+
+Za rješenj je odabrano softversko debouncanje. Koristimo novu funkciju **debounce()**, te varijable **lastDebounceTime** i **debounceDelay**. Cilj funkcije je računati koliko se često poziva ISR na tipkalu, te ako je vrijeme aktivacije manje od vrijdnosti **debounceDelay**, ne proslijediti na daljnu funkciju i buđenjee sustava. U **lastDebounceTim** spremamo vrijednost zadnjeg zvanja prekida tipkala kako bi ga mogli usporediti sa sljedećim zvanjem.
+
+## 7.3. Utjecaj debouncinga na vremensku učinkovitost
+
+Eliminiranjem bouncanja kontakta tipkala oslobađamo sustav od bespotrebnih prolaza i izvršavanja koda. Time koristimo manje energije, ranije završavamo kod, te prije ulazimo natrag u stanje mirovanja za daljnju eenergetski učinkovitu izvedbu koda.
