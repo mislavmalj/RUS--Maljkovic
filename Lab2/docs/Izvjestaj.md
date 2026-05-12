@@ -31,5 +31,5 @@ Makar je iznimno snažno, Wokwi simulacijsko okruženje sadrži neka kritična o
 
 ### 6. Zaključak
 
-Uz pametno korištenje režima mirovanja i njegovu implementaciju u kodu, potrošnja energije se efikasno optimizira. Iako simulacijski nije moguće u potpunosti procjeniti stvarnu potrošnju energije, naša implementacija prikazuje logiku kojom bi se došlo do smanjenja troška energije.
+Uz pametno korištenje režima mirovanja i njegovu implementaciju u kodu, potrošnja energije se efikasno optimizira. Iako simulacijski nije moguće u potpunosti procjeniti stvarnu potrošnju energije, naša implementacija prikazuje logiku kojom bi se došlo do smanjenja gubitka energije, te postavlja temelje za pravilnu implementaciju na fizičkom sklopovlju.
 
